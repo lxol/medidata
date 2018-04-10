@@ -20,7 +20,7 @@ class SolutionTest extends WordSpec with Matchers with PropertyChecks {
       forAll(insuranceGen, ageGen) { (insurance: Insurance, age) => {
         val cost = totalCost(services, insurance, age, discountFun)
         val expected = BigDecimal(60d + 150d + 78d + 200.40d + 27.50d + 15d + 15d).setScale(2, RoundingMode.HALF_EVEN)
-        assert(cost == 60d + 150d + 78d + 200.40d + 27.50d + 15d + 15d)
+        assert(cost == expected)
       }
       }
     }
